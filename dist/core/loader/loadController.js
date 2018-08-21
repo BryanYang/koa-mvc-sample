@@ -17,6 +17,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var path = require('path');
 var is = require('is-type-of');
+
+
+/**
+ * load controller file to app
+ */
 function load(app) {
   app.controller = {};
   var filePath = path.join('../../', 'app/controller/home.js');

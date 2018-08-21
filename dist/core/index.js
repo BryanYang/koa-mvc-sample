@@ -14,6 +14,10 @@ var _loadRouter = require('./loader/loadRouter');
 
 var _loadRouter2 = _interopRequireDefault(_loadRouter);
 
+var _registerViewEngine = require('./register/registerViewEngine');
+
+var _registerViewEngine2 = _interopRequireDefault(_registerViewEngine);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Koa = require('koa');
@@ -25,6 +29,10 @@ app.router = new Router();
 
 // 加载 config;
 app.config = {};
+
+// 注册 view engine
+(0, _registerViewEngine2.default)(app);
+
 (0, _loadService2.default)(app);
 (0, _loadController2.default)(app);
 (0, _loadRouter2.default)(app);

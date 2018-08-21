@@ -68,9 +68,8 @@ var HomeController = function (_Controller) {
 
               case 11:
                 volume = _context.sent;
-
-                ctx.body = ':-)\n    \u5706\u7684\u534A\u5F84: ' + r + '\n    \u5706\u7684\u5468\u957F: ' + length + '\n    \u5706\u7684\u9762\u79EF: ' + area + '\n    \u5706\u7684\u4F53\u79EF: ' + volume + '\n    ';
-                ctx.status = 200;
+                _context.next = 14;
+                return ctx.renderString('HEllo {{ username }}', { username: 'yang' });
 
               case 14:
               case 'end':
