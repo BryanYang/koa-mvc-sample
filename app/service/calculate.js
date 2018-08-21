@@ -9,7 +9,6 @@ class Service {
     this.config = ctx.app.config;
   }
 }
-
 export default class CalcService extends Service {
   async length(r) {
     return 2 * Math.PI * r;

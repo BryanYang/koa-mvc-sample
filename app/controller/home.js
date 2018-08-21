@@ -12,7 +12,6 @@ class Controller {
 }
 
 export default class HomeController extends Controller {
-
   async index() {
     const { ctx } = this;
     const { query } = qs.parseUrl(this.ctx.request.url);

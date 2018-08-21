@@ -6,6 +6,10 @@ const path = require('path');
 const is = require('is-type-of');
 import utils from '../utils/';
 
+
+/**
+ * load controller file to app
+ */
 export default function load(app) {
   app.controller = {};
   const filePath = path.join('../../', 'app/controller/home.js');
