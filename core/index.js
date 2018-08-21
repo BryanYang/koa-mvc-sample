@@ -10,7 +10,9 @@ const app = new Koa();
 app.router = new Router();
 
 // 加载 config;
-app.config = {};
+app.config = {
+  view: 'nunjucks' // 配置engine为 nunjucks
+};
 
 // 注册 view engine
 registerViewEngine(app);
