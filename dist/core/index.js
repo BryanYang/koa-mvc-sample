@@ -14,6 +14,10 @@ var _loadRouter = require('./loader/loadRouter');
 
 var _loadRouter2 = _interopRequireDefault(_loadRouter);
 
+var _loadMiddleware = require('./loader/loadMiddleware');
+
+var _loadMiddleware2 = _interopRequireDefault(_loadMiddleware);
+
 var _registerViewEngine = require('./register/registerViewEngine');
 
 var _registerViewEngine2 = _interopRequireDefault(_registerViewEngine);
@@ -26,16 +30,20 @@ var Router = require('koa-router');
 
 var app = new Koa();
 app.router = new Router();
+app.context.locals = {};
 
 // 加载 config;
 app.config = {
-  view: 'nunjucks' // 配置engine为 nunjucks
+  view: 'nunjucks', // 配置engine为 nunjucks
+  middlewares: ['account']
 };
 
 // 注册 view engine
 (0, _registerViewEngine2.default)(app);
 
 (0, _loadService2.default)(app);
+// 加载中间件
+(0, _loadMiddleware2.default)(app);
 (0, _loadController2.default)(app);
 (0, _loadRouter2.default)(app);
 

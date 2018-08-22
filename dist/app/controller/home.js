@@ -44,34 +44,16 @@ var HomeController = function (_Controller) {
     key: 'index',
     value: function () {
       var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-        var ctx, _qs$parseUrl, query, r, length, area, volume;
-
+        var ctx;
         return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 ctx = this.ctx;
-                _qs$parseUrl = _queryString2.default.parseUrl(this.ctx.request.url), query = _qs$parseUrl.query;
-                r = query.r;
-                _context.next = 5;
-                return this.app.service.calculate.length(r);
+                _context.next = 3;
+                return ctx.renderString('HEllo {{ name }}', ctx.locals.user);
 
-              case 5:
-                length = _context.sent;
-                _context.next = 8;
-                return this.app.service.calculate.area(r);
-
-              case 8:
-                area = _context.sent;
-                _context.next = 11;
-                return this.app.service.calculate.volume(r);
-
-              case 11:
-                volume = _context.sent;
-                _context.next = 14;
-                return ctx.renderString('HEllo {{ username }}', { username: 'yang' });
-
-              case 14:
+              case 3:
               case 'end':
                 return _context.stop();
             }

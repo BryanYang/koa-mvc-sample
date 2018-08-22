@@ -14,7 +14,7 @@ class Controller {
 export default class HomeController extends Controller {
   async index() {
     const { ctx } = this;
-    await ctx.renderString('HEllo {{ username }}', {username: 'yang'});
+    await ctx.renderString('HEllo {{ name }}', ctx.locals.user);
   }
 
 }
