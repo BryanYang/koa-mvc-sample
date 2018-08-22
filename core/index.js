@@ -5,6 +5,8 @@ import loadController from './loader/loadController';
 import loadService from './loader/loadService';
 import loadRouter from './loader/loadRouter';
 import loadMiddleware from './loader/loadMiddleware';
+import loadPlugins from './loader/loadPlugins';
+import loadConfig from './loader/loadConfig';
 import registerViewEngine from './register/registerViewEngine';
 
 const app = new Koa();
@@ -16,6 +18,12 @@ app.config = {
   view: 'nunjucks', // 配置engine为 nunjucks
   middlewares: ['account'],
 };
+
+// 加载插件
+loadPlugins(app);
+
+// 加载Config
+loadConfig(app);
 
 // 注册 view engine
 registerViewEngine(app);

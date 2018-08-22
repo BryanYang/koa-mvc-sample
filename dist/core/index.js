@@ -18,6 +18,14 @@ var _loadMiddleware = require('./loader/loadMiddleware');
 
 var _loadMiddleware2 = _interopRequireDefault(_loadMiddleware);
 
+var _loadPlugins = require('./loader/loadPlugins');
+
+var _loadPlugins2 = _interopRequireDefault(_loadPlugins);
+
+var _loadConfig = require('./loader/loadConfig');
+
+var _loadConfig2 = _interopRequireDefault(_loadConfig);
+
 var _registerViewEngine = require('./register/registerViewEngine');
 
 var _registerViewEngine2 = _interopRequireDefault(_registerViewEngine);
@@ -37,6 +45,12 @@ app.config = {
   view: 'nunjucks', // 配置engine为 nunjucks
   middlewares: ['account']
 };
+
+// 加载插件
+(0, _loadPlugins2.default)(app);
+
+// 加载Config
+(0, _loadConfig2.default)(app);
 
 // 注册 view engine
 (0, _registerViewEngine2.default)(app);
